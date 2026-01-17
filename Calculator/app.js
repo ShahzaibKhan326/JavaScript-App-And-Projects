@@ -1,4 +1,4 @@
-let input = document.querySelector("#input");
+let input = document.querySelector("#calcInput");
 let keys = document.querySelector(".calcKeys")
 
 let firstValue;
@@ -26,7 +26,7 @@ keys.addEventListener("click", (e)=>
          input.value = secondValue;
       }
    }
-   else if(key === "+" || key === "-" || key === "x" || key === "/")
+   else if(key === "+" || key === "-" || key === "x" || key === "/" || key === "%")
    {
       operation = key;
       isSecond = true;
@@ -43,11 +43,14 @@ keys.addEventListener("click", (e)=>
           case "-":
          result = Number(firstValue) - Number(secondValue);
          break;
-          case "*":
+          case "x":
          result = Number(firstValue) * Number(secondValue);
          break;
           case "/":
          result = Number(firstValue) / Number(secondValue);
+         break;
+         case "%":
+         result = Number(firstValue) % Number(secondValue);
          break;
          
       }
