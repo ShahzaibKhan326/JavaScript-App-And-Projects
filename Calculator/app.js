@@ -1,65 +1,72 @@
-// console.log("hello world")
+let input = document.querySelector("#input");
+let keys = document.querySelector(".calcKeys")
 
-var keyList = document.querySelector(".calcKeys")
-var input = document.querySelector("#calcInput")
+let firstValue;
+let secondValue;
+let operation;
+let isSecond = false;
+let result = 0;
 
-let firstNumber = "";
-let secondNumber = "";
-let operator = "";
-let typingSecond = false;
-
-
-keyList.addEventListener("click" , (e)=> 
+keys.addEventListener("click", (e)=>
 {
-    if(e.target.tagName !== "BUTTON") return;
+   if(e.target.tagName !== "BUTTON") return;
 
-    let key = e.target.innerHTML ;
+   let key = e.target.innerHTML;
 
- if(!isNaN(key))
- {
-    if(!typingSecond)
-    {
-     firstNumber += key;
-     input.value = firstNumber;
-     console.log("first :" +firstNumber)
-    }
-    else
-    {
-      secondNumber += key;
-      input.value += secondNumber
-      console.log("second :" +secondNumber)
-    }
- }
- 
- else if(key === "+" || key === "-" || key === "x" || key === "÷")
- {
-     operator = key;
-     typingSecond = true; 
- }
-
- else if(key === "=")
- {
-
-   if(operator === "+")
+   if(!isNaN(key))
    {
-      result =Number(firstNumber)+Number(secondNumber);
+      if(!isSecond)
+      {
+         firstValue = key;
+         input.value += firstValue;
+      }
+      else
+      {
+         secondValue = key;
+         input.value = secondValue;
+      }
+   }
+   else if(key === "+" || key === "-" || key === "x" || key === "/")
+   {
+      operation = key;
+      isSecond = true;
    }
 
-   input.value = result;
-   firstNumber = result.toString();
-   secondNumber = "";
-   operator = "";
-   typingSecond = false;
-
- }
-
- else if (key === "Ac") {
-        firstNumber = "";
-        secondNumber = "";
-        operator = "";
-        typingSecond = false;
-        input.value = "";
- }
+   else if(key === "=")
+   {
+      
+      switch(operation)
+      {
+         case "+":
+         result = Number(firstValue) + Number(secondValue);
+         break;
+          case "-":
+         result = Number(firstValue) - Number(secondValue);
+         break;
+          case "*":
+         result = Number(firstValue) * Number(secondValue);
+         break;
+          case "/":
+         result = Number(firstValue) / Number(secondValue);
+         break;
+         
+      }
    
-    
+      input.value = result;
+      firstValue = result.toString();
+      secondValue = "";
+      operation = "";
+      isSecond = false;
+
+   }
+   else if(key === "Ac")
+   {
+      input.value = "";
+      firstValue = "";
+      secondValue = "";
+      operation = "";
+      isSecond = false;
+   }
+   
+   
 })
