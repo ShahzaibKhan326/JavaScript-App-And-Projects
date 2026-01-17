@@ -1,5 +1,6 @@
 let input = document.querySelector("#calcInput");
 let keys = document.querySelector(".calcKeys")
+let showOperation = document.getElementById("result");
 
 let firstValue;
 let secondValue;
@@ -19,17 +20,20 @@ keys.addEventListener("click", (e)=>
       {
          firstValue = key;
          input.value += firstValue;
+         showOperation.textContent += firstValue;
       }
       else
       {
          secondValue = key;
          input.value = secondValue;
+         showOperation.textContent += secondValue;
       }
    }
    else if(key === "+" || key === "-" || key === "x" || key === "/" || key === "%")
    {
       operation = key;
       isSecond = true;
+      showOperation.textContent += operation
    }
 
    else if(key === "=")
@@ -55,11 +59,15 @@ keys.addEventListener("click", (e)=>
          
       }
    
+
+
       input.value = result;
       firstValue = result.toString();
       secondValue = "";
       operation = "";
       isSecond = false;
+      showOperation.innerText = ""
+
 
    }
    else if(key === "Ac")
@@ -69,7 +77,12 @@ keys.addEventListener("click", (e)=>
       secondValue = "";
       operation = "";
       isSecond = false;
+      showOperation.innerText = ""
    }
    
    
+  
+   
 })
+
+  
