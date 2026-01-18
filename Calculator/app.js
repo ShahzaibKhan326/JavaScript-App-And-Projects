@@ -2,9 +2,9 @@ let input = document.querySelector("#calcInput");
 let keys = document.querySelector(".calcKeys")
 let showOperation = document.getElementById("result");
 
-let firstValue;
-let secondValue;
-let operation;
+let firstValue = "";
+let secondValue = "";
+let operation ="";
 let isSecond = false;
 let result = 0;
 
@@ -12,33 +12,35 @@ keys.addEventListener("click", (e)=>
 {
    if(e.target.tagName !== "BUTTON") return;
 
-   let key = e.target.innerHTML;
+   let key = e.target.innerText;
 
    if(!isNaN(key))
    {
       if(!isSecond)
       {
-         firstValue = key;
-         input.value += firstValue;
-         showOperation.textContent += firstValue;
+         firstValue += key;
+         input.value = firstValue;
+         showOperation.textContent += key;
       }
       else
       {
-         secondValue = key;
+         secondValue += key;
          input.value = secondValue;
-         showOperation.textContent += secondValue;
+         showOperation.textContent += key;
       }
    }
    else if(key === "+" || key === "-" || key === "x" || key === "/" || key === "%")
    {
       operation = key;
       isSecond = true;
-      showOperation.textContent += operation
+      showOperation.textContent += key
    }
 
    else if(key === "=")
    {
       
+      if(firstValue === "" || secondValue === "") return;
+
       switch(operation)
       {
          case "+":
@@ -51,7 +53,7 @@ keys.addEventListener("click", (e)=>
          result = Number(firstValue) * Number(secondValue);
          break;
           case "/":
-         result = Number(firstValue) / Number(secondValue);
+         result = Number(secondValue)===0 ? "Error" : Number(firstValue) / Number(secondValue);
          break;
          case "%":
          result = Number(firstValue) % Number(secondValue);
@@ -62,6 +64,7 @@ keys.addEventListener("click", (e)=>
 
 
       input.value = result;
+      
       firstValue = result.toString();
       secondValue = "";
       operation = "";
