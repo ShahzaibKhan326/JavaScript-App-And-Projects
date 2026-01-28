@@ -1,38 +1,40 @@
 let List = document.querySelector(".list");
 let textArea = document.querySelector("#textArea");
-let editBtn = document.querySelector(".edit");
-let input = "";
-let selectedLi = null;
+
+let targetLi = null; // store selected li for edit
+
 function addList() {
-  input = `
-<span id="elip">${textArea.value}</span>
-<div class="btns">
-<button class ="edit" onclick="editList(this)">Edit</button><button class="delete btn" onclick="deleteList()">Delete</button>
-</div> `;
+  if (textArea.value.trim() === "") return;
 
   let li = document.createElement("li");
-  li.innerHTML = input;
+
+  li.innerHTML = `
+    <span id="elip">${textArea.value}</span>
+    <div class="btns">
+      <button class="edit" onclick="editList(this)">Edit</button>
+      <button class="delete btn" onclick="deleteList(this)">Delete</button>
+    </div>
+  `;
+
   List.append(li);
-  li.input = "";
+  textArea.value = "";
 }
 
-function editList(id)
-{
-    selectedLi = id.parentNode.parentNode
-    let text = selectedLi.childNodes[1]
-    textArea.value = text.innerText;  
+function editList(btn) {
+  targetLi = btn.parentNode.parentNode; // save li
+  let text = targetLi.children[0].innerText;
+  textArea.value = text;
 }
 
-function updateList()
-{
-   let text = selectedLi.childNodes[1].innerText
-     text = textArea.value ;
+function updateList() {
+  if (!targetLi) return;
+
+  targetLi.children[0].innerText = textArea.value;
+  textArea.value = "";
+  targetLi = null;
 }
 
-function deleteList(id)
-{
-    selectedLi = id.parentNode.parentNode;
-    console.log(selectedLi)
-    List.removeChild(selectedLi)
-    
+function deleteList(btn) {
+  let li = btn.parentNode.parentNode;
+  li.remove();
 }
