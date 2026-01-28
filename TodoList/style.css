@@ -1,0 +1,115 @@
+* 
+{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.column {
+    display: flex;
+    flex-flow: column;
+}
+.row {
+    display: flex;
+}
+.center
+{   
+    justify-content: center; 
+    align-items: center;
+}
+
+.container
+{
+    width: 1000px;
+    height: 100vh;
+    background-color: lightskyblue;
+    display: flex;
+    flex-flow: column;
+    font-size:24px;
+}
+.todoApp {
+    width: 760px;
+    height: 740px;
+    background-color: rgb(241, 239, 234) ;
+    border-radius: 15px;
+    gap:10px;
+    padding:10px 0px;
+    border: 2px solid lime;
+    overflow: hidden;
+    position: relative;
+
+    
+}
+ul {
+    width: 5;
+    height: 600px;
+    margin-top: 40px;
+    padding-top:20px;
+    border:2px solid red;
+    padding:5px;
+    list-style: none;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-radius: 8px;
+}
+  
+li
+{
+    padding:10px 15px;
+    background-color: white;
+    margin-top:5px;
+    border-radius: 50px;
+    width: 700px;
+    height: 55px;
+    border: 1px solid ;
+    display: flex;
+    border: 1px solid brown;
+    width: 700px;
+}
+span {
+   width: 550px;
+   padding:0px 2px;
+   white-space:nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   /* border: 2px solid lime; */
+}
+
+#btn {
+  width: 60px;
+  height: 40px;
+  background-color:green;
+  color: white;
+  border-radius: 15px;
+  border: none;
+}
+
+.buttonArea 
+{
+    height: 60px;
+    /* border: 1px solid brown; */
+    border: none;
+    
+}
+.btns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:white;
+    /* padding:25px 14px; */
+    border-radius: 25px;
+    width: 190px;
+    gap:10px;
+    /* border: 1px solid red; */
+    
+}
+.edit , .delete {
+    width: 70px;
+    height: 40px;
+    background-color: forestgreen;
+    color:white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
