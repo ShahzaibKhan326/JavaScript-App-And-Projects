@@ -36,9 +36,6 @@
     padding:10px 0px;
     border: 2px solid lime;
     overflow: hidden;
-    position: relative;
-
-    
 }
 ul {
     width: 5;
@@ -113,3 +110,17 @@ span {
     font-size: 20px;
 }
 
+.addMode {
+    width: 98%;
+    height: 250px;
+    border:1px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#textArea {
+    width: 65%;
+    height: 80%;
+    font-size: 20px;
+    padding:0px;
+}
