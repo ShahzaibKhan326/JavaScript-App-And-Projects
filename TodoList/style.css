@@ -116,7 +116,8 @@ span {
 }
 
 .edit,
-.delete {
+.delete,
+.show  {
     width: 70px;
     height: 35px;
     border-radius: 10px;
@@ -141,4 +142,12 @@ span {
 
 .delete:hover {
     background: #e53935;
+}
+.show 
+{
+    background-color: rgb(81, 210, 81);
+}
+.show:hover 
+{
+    background-color:rgb(114, 180, 87) ;
 }

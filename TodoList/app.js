@@ -11,6 +11,7 @@ function addList() {
   li.innerHTML = `
     <span id="elip">${textArea.value}</span>
     <div class="btns">
+      <button class="show btn" onclick="showList(this)">Show</button>
       <button class="edit" onclick="editList(this)">Edit</button>
       <button class="delete btn" onclick="deleteList(this)">Delete</button>
     </div>
@@ -20,11 +21,31 @@ function addList() {
   textArea.value = "";
 }
 
+
+
+function showList(btn)
+{
+  targetLi = btn.parentNode.parentNode;
+  let text = targetLi.children[0].innerText;
+  textArea.value = text;
+  textArea.setAttribute("disabled",true)
+  
+}
+
 function editList(btn) {
   targetLi = btn.parentNode.parentNode; // save li
   let text = targetLi.children[0].innerText;
   textArea.value = text;
+  
+  if(textArea.hasAttribute("disabled",true))
+  {
+
+    textArea.toggleAttribute("disabled",false);
+  }
 }
+
+
+
 
 function updateList() {
   if (!targetLi) return;
