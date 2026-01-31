@@ -9,12 +9,14 @@ let allBrands = { apple:false , samsung:false }
 
 
 let mySelect = document.querySelector("#brands")
-let 
+let card = document.querySelector(".card");
+
 
 
 mySelect.addEventListener("change", function ()
 {
     let selectBrand = mySelect.value;  
+    let data = brands[selectBrand]
    
     for(let key in allBrands)
     {
@@ -26,9 +28,12 @@ mySelect.addEventListener("change", function ()
         allBrands[selectBrand] = true;
     }
     
+    card.innerHTML = 
+    `
+    <h3>${data.name}</h3>
+    `
 
-    console.log(allBrands)
-    console.log(brands[selectBrand])
+   
     
 })
 
