@@ -5,25 +5,30 @@ let brands = {
     samsung: {name: "samsung 41" ,brand:"samsung",color:"silver"},  
 }
 
-// console.log(brands.samsung.name)
+let allBrands = { apple:false , samsung:false }
+
 
 let mySelect = document.querySelector("#brands")
-// let selectedValue = mySelect.value
-// let selectedIndex = mySelect.selectedIndex
-// let options = mySelect.options
+let 
 
-// mySelect.addEventListener("click" , function() {
-//    var options = mySelect.querySelector("option")
-//    console.log(options)
-// })
-mySelect.addEventListener("change", function()
+
+mySelect.addEventListener("change", function ()
 {
-    if(mySelect.value == "apple")
+    let selectBrand = mySelect.value;  
+   
+    for(let key in allBrands)
     {
-        console.log("apple")
+        allBrands[key]=false;
     }
-    else
+    
+    if(selectBrand in allBrands)
     {
-        console.log("samsung")
+        allBrands[selectBrand] = true;
     }
+    
+
+    console.log(allBrands)
+    console.log(brands[selectBrand])
+    
 })
+
