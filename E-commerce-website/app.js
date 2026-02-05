@@ -38,7 +38,7 @@ function renderProducts(data) {
               <span class="text">${product.name}</span>
             </div>
 
-            <div class="price">Rs ${product.price}</div>
+            <div class="price">$ ${product.price}</div>
 
             <div class="ratingSection">
               <div class="sold">Sold: ${product.sold} items</div>
