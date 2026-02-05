@@ -3,9 +3,9 @@ let container = document.querySelector(".cardsContainer")
 
 let products = {
     Mobiles:{
-        apple:{name:"Iphone 14 Pro Max",price:1000,sold:33,rating:4.2,img:"Assets/Images/iphone-14.jpg"},
-        samsung:{name:"S21 ultra 512 GB",price:900,sold:43,rating:4.3,img:"Assets/Images/samsung-s21.jpg"},
-        redmi:{name:"Redmi Go",price:150,sold:50,rating:4.5,img:"Assets/Images/redmi-go.webp"}
+        apple:{name:"Iphone 14 Pro Max",price:1000,sold:33,rating:4.2,img:"Assets/Images/mobiles/iphone-14.jpg"},
+        samsung:{name:"S21 ultra 512 GB",price:900,sold:43,rating:4.3,img:"Assets/Images/mobiles/samsung-s21.jpg"},
+        redmi:{name:"Redmi Go",price:150,sold:50,rating:4.5,img:"Assets/Images/mobiles/redmi-go.webp"}
     },
      Laptops:{
         lenovo:{name:"Lenovo v15 G5",price:1200,sold:13,rating:4.0,img:"Assets/Images/laptops/lenovo_laptop.jpg"},
@@ -13,9 +13,9 @@ let products = {
         lenovo_gaming:{name:"Lenovo LOQ 15",price:1500,sold:30,rating:5.0,img:"Assets/Images/laptops/lenovo_gaming_laptop.jpg"}
     },
     Games:{
-        football_game:{name:"PlayStation Fc 2026",price:90,sold:150,rating:4.1,img:"Assets/Images/games/football_game.jpg"},
-        Fighting_game:{name:"PlayStaion Tekken 5",price:350,sold:20,rating:5.0,img:"Assets/Images/games/tekken_game.webp"},
-        Fighting_game01:{name:"Street Fighther",price:50,sold:101,rating:3.7,img:"Assets/Images/games/street_fighther.webp"}
+        football_game:{name:"PlayStation Fc 2026",price:90,sold:150,rating:4.1,img:"Assets/Images/Games/football_game.jpg"},
+        Fighting_game:{name:"PlayStaion Tekken 5",price:350,sold:20,rating:5.0,img:"Assets/Images/Games/tekken_game.webp"},
+        Fighting_game01:{name:"Street Fighther",price:50,sold:101,rating:3.7,img:"Assets/Images/Games/street_fighther.webp"}
     },
    
 }
